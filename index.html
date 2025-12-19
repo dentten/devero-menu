@@ -11,31 +11,19 @@
         :root { --accent: #c29958; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e5e5e5; overflow-x: hidden; }
-        
         .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .product-card { background: #141414; border: 1px solid rgba(255,255,255,0.03); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
         .product-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-        
-        .glass-effect {
-            background: linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
+        .glass-effect { background: linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
         #sidebar { transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0); z-index: 200; }
         .sidebar-overlay { background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); display: none; z-index: 150; }
-        
         #about-page { display: none; }
-
         .modal-bg { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(12px); display: none !important; }
         .modal-active { display: flex !important; }
-        
         .active-cat { background-color: var(--accent) !important; color: white !important; box-shadow: 0 4px 15px rgba(194, 153, 88, 0.3); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        
         @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .animate-slide-up { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-
         .logo-shadow { filter: drop-shadow(0 0 15px rgba(194, 153, 88, 0.4)); }
     </style>
 </head>
@@ -72,26 +60,42 @@
 
         <div class="px-4 sm:px-6 -mt-10 relative z-20 max-w-5xl mx-auto w-full">
             <div class="glass-effect rounded-3xl p-6 flex flex-wrap justify-between items-center shadow-2xl border border-white/10 uppercase">
-                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest">LOCATION</p><p class="text-[10px] font-semibold uppercase">ΠΛ. ΑΡΕΩΣ 0</p></div>
-                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest">CONTACT</p><a href="tel:+302710223344" class="text-[10px] font-semibold underline decoration-white/20">2710 223344</a></div>
-                <div class="flex-1 text-center"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest">RATING</p><p class="text-[10px] font-semibold uppercase italic"><i class="fas fa-star text-[var(--accent)]"></i> 4.5</p></div>
+                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">LOCATION</p><p class="text-[10px] font-semibold uppercase">ΠΛ. ΑΡΕΩΣ 0</p></div>
+                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">CONTACT</p><a href="tel:+302710223344" class="text-[10px] font-semibold underline decoration-white/20">2710 223344</a></div>
+                <div class="flex-1 text-center"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">RATING</p><p class="text-[10px] font-semibold uppercase italic"><i class="fas fa-star text-[var(--accent)]"></i> 4.5</p></div>
             </div>
         </div>
 
         <nav class="sticky top-0 z-30 glass-nav py-5 mt-8 uppercase">
-            <div class="flex overflow-x-auto no-scrollbar px-6 gap-4 text-center justify-start md:justify-center uppercase">
+            <div class="flex overflow-x-auto no-scrollbar px-6 gap-4 text-center justify-start uppercase">
                 <button onclick="filter('coffee', this)" class="cat-btn active-cat bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">COFFEE</button>
                 <button onclick="filter('brunch', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">BRUNCH</button>
+                <button onclick="filter('pizza', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">PIZZA</button>
+                <button onclick="filter('pasta', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">PASTA</button>
+                <button onclick="filter('burgers', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">BURGERS</button>
+                <button onclick="filter('club', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">CLUB SANDWICH</button>
+                <button onclick="filter('merides', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">ΜΕΡΙΔΕΣ</button>
+                <button onclick="filter('salates', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">ΣΑΛΑΤΕΣ</button>
+                <button onclick="filter('crepes', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">ΚΡΕΠΕΣ</button>
                 <button onclick="filter('drinks', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">COCKTAILS</button>
                 <button onclick="filter('wine', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">WINE LIST</button>
+                <button onclick="filter('soft-drinks', this)" class="cat-btn bg-white/5 px-6 py-2 rounded-xl text-[10px] font-bold tracking-widest whitespace-nowrap transition-all">ΑΝΑΨΥΚΤΙΚΑ</button>
             </div>
         </nav>
 
         <main id="menu-container" class="p-6 space-y-16 pb-32 max-w-4xl mx-auto text-left">
             <section id="coffee" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Coffee Ritual</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
             <section id="brunch" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Signature Brunch</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="pizza" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Authentic Pizza</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="pasta" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Pasta Fresca</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="burgers" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Premium Burgers</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="club" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Club Sandwich</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="merides" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Κυρίως Πιάτα</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="salates" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Salad Bar</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="crepes" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Creperie</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
             <section id="drinks" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Night Tales</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
             <section id="wine" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Wine Selection</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
+            <section id="soft-drinks" class="category-section"><h2 class="text-3xl text-white mb-8 border-l-4 border-[var(--accent)] pl-4 tracking-tighter uppercase italic">Soft Drinks</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5"></div></section>
         </main>
     </div>
 
@@ -109,22 +113,18 @@
     <div id="productModal" class="modal-bg fixed inset-0 z-[100] flex items-end justify-center">
         <div class="bg-[#0c0c0c] w-full max-w-2xl max-h-[95vh] overflow-y-auto rounded-t-[40px] animate-slide-up relative border-t border-white/10 shadow-2xl no-scrollbar">
             <div class="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4 mb-2"></div>
-            <button onclick="closeProduct()" class="absolute top-6 right-6 w-11 h-11 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white z-20 border border-white/10 shadow-lg">
-                <i class="fas fa-times text-lg"></i>
-            </button>
+            <button onclick="closeProduct()" class="absolute top-6 right-6 w-11 h-11 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white z-20 border border-white/10 shadow-lg"><i class="fas fa-times text-lg"></i></button>
             <div class="relative h-72 sm:h-80 w-full overflow-hidden">
                 <img id="modalImg" src="" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] to-transparent"></div>
             </div>
             <div class="p-8 pb-12 relative text-center">
-                <div class="mb-6">
+                <div class="mb-6 uppercase">
                     <span class="text-[var(--accent)] text-[10px] font-black tracking-[0.4em] mb-2 block opacity-70">Premium Selection</span>
                     <h2 id="modalTitle" class="text-4xl text-white tracking-tight font-black italic mb-4 uppercase leading-tight"></h2>
-                    <div class="bg-white/5 inline-block px-6 py-2 rounded-xl border border-white/10 font-bold">
-                        <span id="modalPrice" class="text-2xl font-bold text-white uppercase italic"></span>
-                    </div>
+                    <div class="bg-white/5 inline-block px-6 py-2 rounded-xl border border-white/10 font-bold"><span id="modalPrice" class="text-2xl font-bold text-white uppercase italic"></span></div>
                 </div>
-                <div class="space-y-4 mb-10">
+                <div class="space-y-4 mb-10 uppercase">
                     <h4 class="text-[10px] font-black text-gray-500 tracking-[0.2em] border-b border-white/5 pb-2 text-center opacity-60">ΠΕΡΙΓΡΑΦΗ & ΛΕΠΤΟΜΕΡΕΙΕΣ</h4>
                     <p id="modalDesc" class="text-sm text-gray-300 leading-relaxed font-light italic px-4 opacity-90 lowercase normal-case"></p>
                 </div>
@@ -136,7 +136,7 @@
     <footer class="bg-black py-16 px-6 text-center border-t border-white/10 uppercase">
         <h2 class="text-3xl text-white mb-10 tracking-tighter italic font-black uppercase tracking-widest opacity-80">DEVERO</h2>
         <p class="text-[9px] text-gray-600 font-bold tracking-widest uppercase mb-10 italic">Tripoli Since 2014</p>
-        <p class="text-[9px] text-gray-600 font-bold tracking-widest opacity-40 italic underline underline-offset-8"></p>
+        <p class="text-[9px] text-gray-600 font-bold tracking-widest opacity-40 italic underline underline-offset-8">DESIGNED BY [ΤΟ ΟΝΟΜΑ ΣΟΥ] | UOP IT TRIPOLI</p>
     </footer>
 
     <script>
@@ -159,12 +159,11 @@
                     return {
                         category: columns[0]?.trim().toLowerCase(),
                         name: columns[1]?.trim().replace(/"/g, ''),
-                        price: columns[2]?.trim().replace(/"/g, ''), // <--- ΔΙΟΡΘΩΣΗ: Αφαίρεση εισαγωγικών από την τιμή
+                        price: columns[2]?.trim().replace(/"/g, ''),
                         description: columns[3]?.trim().replace(/"/g, ''),
                         image: columns[4]?.trim()
                     };
                 });
-
                 renderMenu(items);
             } catch (err) {
                 console.error("Σφάλμα φόρτωσης μενού:", err);
@@ -172,7 +171,21 @@
         }
 
         function renderMenu(items) {
-            const catMap = { 'coffee': 'coffee', 'brunch': 'brunch', 'cocktails': 'drinks', 'wine list': 'wine' };
+            // Mapping της λέξης που γράφεις στο Google Sheet με το ID του section στο HTML
+            const catMap = { 
+                'coffee': 'coffee', 
+                'brunch': 'brunch', 
+                'pizza': 'pizza',
+                'pasta': 'pasta',
+                'burgers': 'burgers',
+                'club': 'club',
+                'merides': 'merides',
+                'salates': 'salates',
+                'crepes': 'crepes',
+                'cocktails': 'drinks', 
+                'wine list': 'wine',
+                'soft drinks': 'soft-drinks'
+            };
             
             items.forEach(item => {
                 const sectionId = catMap[item.category];
@@ -180,9 +193,9 @@
                 if (container && item.name) {
                     container.innerHTML += `
                         <div onclick="openProduct('${item.name}', '${item.price}', '${item.description}', '${item.image}')" 
-                             class="product-card p-4 rounded-3xl flex items-center gap-5 uppercase">
+                             class="product-card p-4 rounded-3xl flex items-center gap-5 uppercase text-left">
                             <img src="${item.image}" class="w-20 h-20 object-cover rounded-2xl shadow-lg border border-white/5">
-                            <div class="flex-1 text-left">
+                            <div class="flex-1">
                                 <div class="flex justify-between items-center">
                                     <h4 class="text-xs font-bold tracking-widest">${item.name}</h4>
                                     <span class="text-[var(--accent)] font-bold italic">${item.price}€</span>
