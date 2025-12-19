@@ -11,19 +11,31 @@
         :root { --accent: #c29958; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e5e5e5; overflow-x: hidden; }
+        
         .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .product-card { background: #141414; border: 1px solid rgba(255,255,255,0.03); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
         .product-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-        .glass-effect { background: linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        
+        .glass-effect {
+            background: linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
         #sidebar { transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0); z-index: 200; }
         .sidebar-overlay { background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); display: none; z-index: 150; }
+        
         #about-page { display: none; }
+
         .modal-bg { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(12px); display: none !important; }
         .modal-active { display: flex !important; }
+        
         .active-cat { background-color: var(--accent) !important; color: white !important; box-shadow: 0 4px 15px rgba(194, 153, 88, 0.3); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        
         @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .animate-slide-up { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
         .logo-shadow { filter: drop-shadow(0 0 15px rgba(194, 153, 88, 0.4)); }
     </style>
 </head>
@@ -61,7 +73,7 @@
         <div class="px-4 sm:px-6 -mt-10 relative z-20 max-w-5xl mx-auto w-full">
             <div class="glass-effect rounded-3xl p-6 flex flex-wrap justify-between items-center shadow-2xl border border-white/10 uppercase">
                 <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">LOCATION</p><p class="text-[10px] font-semibold uppercase">ΠΛ. ΑΡΕΩΣ 0</p></div>
-                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">CONTACT</p><a href="tel:271 022 1212" class="text-[10px] font-semibold underline decoration-white/20">2710 223344</a></div>
+                <div class="flex-1 text-center border-r border-white/10"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">CONTACT</p><a href="tel:2710221212" class="text-[10px] font-semibold underline decoration-white/20">2710 221212</a></div>
                 <div class="flex-1 text-center"><p class="text-[9px] text-[var(--accent)] mb-1 font-black tracking-widest uppercase">RATING</p><p class="text-[10px] font-semibold uppercase italic"><i class="fas fa-star text-[var(--accent)]"></i> 4.5</p></div>
             </div>
         </div>
@@ -113,7 +125,9 @@
     <div id="productModal" class="modal-bg fixed inset-0 z-[100] flex items-end justify-center">
         <div class="bg-[#0c0c0c] w-full max-w-2xl max-h-[95vh] overflow-y-auto rounded-t-[40px] animate-slide-up relative border-t border-white/10 shadow-2xl no-scrollbar">
             <div class="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4 mb-2"></div>
-            <button onclick="closeProduct()" class="absolute top-6 right-6 w-11 h-11 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white z-20 border border-white/10 shadow-lg"><i class="fas fa-times text-lg"></i></button>
+            <button onclick="closeProduct()" class="absolute top-6 right-6 w-11 h-11 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white z-20 border border-white/10 shadow-lg">
+                <i class="fas fa-times text-lg"></i>
+            </button>
             <div class="relative h-72 sm:h-80 w-full overflow-hidden">
                 <img id="modalImg" src="" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] to-transparent"></div>
@@ -134,9 +148,19 @@
     </div>
 
     <footer class="bg-black py-16 px-6 text-center border-t border-white/10 uppercase">
-        <h2 class="text-3xl text-white mb-10 tracking-tighter italic font-black uppercase tracking-widest opacity-80">DEVERO</h2>
+        <h2 class="text-3xl text-white mb-6 tracking-tighter italic font-black uppercase tracking-widest opacity-80">DEVERO</h2>
+        
+        <div class="flex justify-center gap-8 mb-10">
+            <a href="https://www.instagram.com/devero_all_day/" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--accent)] transition-colors">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/deverotripoli/" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--accent)] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
         <p class="text-[9px] text-gray-600 font-bold tracking-widest uppercase mb-10 italic">Tripoli Since 2014</p>
-        <p class="text-[9px] text-gray-600 font-bold tracking-widest opacity-40 italic underline underline-offset-8"></p>
+        <p class="text-[9px] text-gray-600 font-bold tracking-widest opacity-40 italic underline underline-offset-8">Designed by [ΤΟ ΟΝΟΜΑ ΣΟΥ] | UOP IT Tripoli</p>
     </footer>
 
     <script>
@@ -171,7 +195,6 @@
         }
 
         function renderMenu(items) {
-            // Mapping της λέξης που γράφεις στο Google Sheet με το ID του section στο HTML
             const catMap = { 
                 'coffee': 'coffee', 
                 'brunch': 'brunch', 
